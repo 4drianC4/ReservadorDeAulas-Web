@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\File;
-use App\Http\Controllers\ReservaAulaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,16 +12,30 @@ use App\Http\Controllers\ReservaAulaController;
 |
 */
 
-/*Route::get('/', function () {
-    $path = public_path('assets/index.html');
-    if(File::exists($path)){
-        return File::get($path);
-    }
-    abort(404);
+Route::get('/reservaraula', function () {
+    return view('reservaUser');
+});
 
-});*/
+Route::get('/horariodeaula', function () {
+    return view('mostrarHorario');
+});
 
+Route::get('/agregaraula', function () {
+    return view('agregarAula');
+});
 
-//Route::get('/',[ReservaAulaController::class,'create']);
+Route::get('/', function () {
+    return view('homePageUser');
+});
 
+Route::get('/homeadmin', function () {
+    return view('homePageAdmin');
+});
 
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/horariousuario', function () {
+    return view('horarioUsuario');
+});
