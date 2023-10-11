@@ -34,6 +34,7 @@
         <input type="submit" class = "btn-mostrar" class = "otro" value="Reservar Aula">
 
         <a  href="{{url('/horariodeaula')}}"><input type="button" value="Mostrar Información Aula" class = "btn-mostrar"></a>
+        <a  href="{{url('/')}}"><input type="button" value="volver" class = "btn-volver"></a>
     </form>
     </body>
     
