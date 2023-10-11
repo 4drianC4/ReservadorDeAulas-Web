@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\File;
+use App\Http\Controllers\ReservaAulaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +14,16 @@ use Illuminate\Support\Facades\File;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     $path = public_path('assets/index.html');
     if(File::exists($path)){
         return File::get($path);
     }
     abort(404);
-});
+
+});*/
+
+
+//Route::get('/',[ReservaAulaController::class,'create']);
+
+
