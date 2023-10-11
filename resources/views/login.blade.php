@@ -17,7 +17,7 @@
             <img src="{{ asset('multimedia/user.png') }}" alt="usuario" class="imgcont">
             <p>Nombre de usuario: <input type="text" name="nombre" size="40"></p>
             <p>Contraseña: <input type="password" name="contraseña" size="40"></p>
-            <button>Ingresar</button>
+            <button><a href="{{url('/')}}">Ingresar</a></button>
             
         </div>
     </body>

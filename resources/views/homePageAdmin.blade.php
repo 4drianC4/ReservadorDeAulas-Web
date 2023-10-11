@@ -22,6 +22,10 @@
         <button type="submit"><i class="fa fa-search"></i></button>
     </form>
       
+<form>
+    <a href="{{url('/reservaraula')}}"><input type="button" value="Reserva" class = "btn-reserva"></a>
+    <a href="{{url('/login')}}"><input type="button" value="Log out" class = "btn-log"></a>
+</form>
 
     <div class="container">
         <h1>Listado de Aulas</h1>

@@ -46,7 +46,7 @@
 
         <input type="submit" class = "btn-mostrar" class = "otro" value="Reservar Aula">
 
-        <input type="button" value="Mostrar Información Aula" class = "btn-mostrar">
+        <a  href="{{url('/horariodeaula')}}"><input type="button" value="Mostrar Información Aula" class = "btn-mostrar"></a>
     </form>
     </body>
     
