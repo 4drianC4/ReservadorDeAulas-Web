@@ -20,7 +20,7 @@ class AulaController extends Controller
 
     public function create()
     {
-        return view('reservaUser');
+        return view('homePageUser');
     }
 
     public function store(Request $request)

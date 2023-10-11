@@ -21,27 +21,39 @@ class ReservaAulaController extends Controller
     }
 
     public function store(Request $request)
-    {
+{
+    $aux = $request->nombre_aula;
+    $aula = Aula::where('nombre', $aux)->first();
 
-        $aux = $request->nombre_aula;
-        $aula = Aula::where('nombre', $aux)->first();
-        /*if ($aula) {
-            $idDelAula = $aula->id;
-        }*/
-
-        $reserva = new Reserva();
-        $reserva->fecha = $request->fecha;
-        $reserva->hora_inicio = $request->hora_inicio;
-        $reserva->descripcion = $request->descripcion;
-        $reserva->hora_fin = $request->hora_fin;
-        $reserva->aula_id = $aula->id;
-
-        $userdd = 1;
-
-        $reserva->usuario_id = $userdd; 
-        $reserva->save();
-        return redirect()->route('reservaAula.index');
+    if (!$aula) {
+        //return redirect()->route('reservaAula.index')->with('error', 'El aula especificada no existe');
+        return 'El aula no existe';
     }
+
+    if ($aula->estado === 'no disponible') {
+        //return redirect()->route('reservaAula.index')->with('error', 'El aula ya está reservada');
+        return 'El aula ya está reservada';
+    }
+
+    $reserva = new Reserva();
+    $reserva->fecha = $request->fecha;
+    $reserva->hora_inicio = $request->hora_inicio;
+    $reserva->descripcion = $request->descripcion;
+    $reserva->hora_fin = $request->hora_fin;
+    $reserva->aula_id = $aula->id;
+
+    $userdd = 1;
+    $reserva->usuario_id = $userdd;
+
+    $aula->estado = 'no disponible'; // Cambia el estado del aula
+    $aula->save();
+
+    $reserva->save();
+    
+    //return view('homePageUser');
+    return view('reservaUser');
+}
+
 
     public function show($id)
     {

@@ -30,7 +30,6 @@
         
         <label for="motivo">Motivo de la Reserva:</label>
         <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
-
         <input type="submit" class = "btn-mostrar" class = "otro" value="Reservar Aula">
 
         <a  href="{{url('/horariodeaula')}}"><input type="button" value="Mostrar Información Aula" class = "btn-mostrar"></a>

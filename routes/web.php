@@ -26,9 +26,6 @@ Route::get('/agregaraula', function () {
     return view('agregarAula');
 });
 
-Route::get('/', function () {
-    return view('homePageUser');
-});
 
 Route::get('/homeadmin', function () {
     return view('homePageAdmin');
@@ -47,6 +44,7 @@ Route::get('/horariousuario', function () {
 Route::resource('reservaAula', ReservaAulaController::class);
 
 
-Route::get('/aulas', [AulaController::class,'index']);
+Route::get('/', [AulaController::class,'index']);
+
 
 
