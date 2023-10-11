@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Aulas</title>
-    <link rel="stylesheet" href="asset/CSS/stylesunionAdminUser.css">
+    <link rel="stylesheet" href="{{ asset('assets/stylesunionAdminUser.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/"></script>
     
 </head>
 <body>
-    @include('assets.index')
-
     <div class="cabecera">
-        <img src="Multimedia/logoumss.png" class="iconcab">
-        <!-- Simulate a smartphone / tablet -->
-
-       
+        <img src="{{ asset('multimedia/logoumss.png') }}" class="iconcab">
     </div>
 
     

@@ -21,7 +21,6 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
   
-  @media (max-width: 390px){
   table {
     width: 50%;
     border-collapse: collapse;

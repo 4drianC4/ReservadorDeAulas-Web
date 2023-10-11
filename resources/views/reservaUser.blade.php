@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
         <title>Sansiaulas</title>
-        <link rel="stylesheet" href="asset/CSS/stylesreservaUser.css">
+        <link rel="stylesheet" href="{{ asset('assets/stylesreservaUser.css')}}">
         <script src="scripts/"></script>
     </head>
 
     <body>
         <div class="cabecera">
-            <img src="Multimedia/logoumss.png" class="iconcab">
+            <img src= "{{ asset('multimedia/logoumss.png') }}" class="iconcab">
         </div>
         <h1>Reserva de Aulas</h1>
     <form action="procesar_reserva.php" method="POST">

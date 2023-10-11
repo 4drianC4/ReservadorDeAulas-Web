@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
         <title>Sansiaulas</title>
-        <link rel="stylesheet" href="asset/CSS/stylesunionAdminUser.css">
+        <link rel="stylesheet" href="{{ asset('assets/stylesunionAdminUser.css')}}">
         <script src="scripts/"></script>
     </head>
     <body>
         <div class="cabecera">
-            <img src="Multimedia/logoumss.png" class="iconcab">
+            <img src="{{ asset('multimedia/logoumss.png') }}" class="iconcab">
             <h1>Horario en aula</h1>
         </div>
         <div class="opciones">
