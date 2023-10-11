@@ -40,7 +40,7 @@ class ReservaAulaController extends Controller
 
         $reserva->usuario_id = $userdd; 
         $reserva->save();
-        return redirect()->route('reservaAula.index');
+        //return redirect()->url('/');
     }
 
     public function show($id)
