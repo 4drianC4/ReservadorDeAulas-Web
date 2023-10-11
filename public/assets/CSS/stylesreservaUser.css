@@ -1,0 +1,104 @@
+/* Estilo para el cuerpo del formulario */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.cabecera{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-evenly;
+    background: linear-gradient(#004d8f,#d50715);
+    align-items: center;
+    margin-bottom: 10%;
+    color: #ffffff;
+}
+
+.iconcab{
+    height: auto;
+    max-width: 10%;
+    float: left;
+}
+
+/* Estilo para el encabezado del formulario */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo para el contenedor del formulario */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Cambiamos la dirección de flex a columna */
+    justify-content: center; /* Centramos verticalmente los elementos */
+    align-items: stretch; /* Estiramos los elementos para que ocupen todo el ancho */
+}
+
+/* Estilo para las etiquetas y campos de entrada */
+label, input[type="text"], input[type="date"], input[type="time"], select {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Ajustamos el ancho de los campos de fecha */
+input[type="date"] {
+    flex-basis: calc(33.33% - 10px); /* 33.33% de ancho con margen derecho */
+}
+
+input[type="time"] {
+    min-width: 150px; /* Establecemos un ancho mínimo */
+}
+
+/* Estilo para los botones */
+input[type="submit"],
+.btn-mostrar {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    align-self: flex-start;
+}
+
+/* Cambia el color del botón al pasar el mouse sobre él */
+input[type="submit"]:hover,
+.btn-mostrar:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el botón "Mostrar Información Aula" */
+.btn-mostrar {
+    align-self: flex-end; /* Alinea a la derecha dentro del contenedor */
+    margin-top: 10px; /* Agrega un espacio arriba del botón */
+}
+
+input[type="button"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    align-self: flex-start; /* Alinea a la derecha dentro del contenedor */
+}
+
+
+
+
+
+
