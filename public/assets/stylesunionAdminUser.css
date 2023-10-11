@@ -48,10 +48,11 @@ body{
     background-color: #ff9999;
   }
   
-  .available {
+  .available{
     background-color: #99ff99;
   }
   
+
   /*Tal vez se pueda borrar*/
   .iconcab{
     height: auto;

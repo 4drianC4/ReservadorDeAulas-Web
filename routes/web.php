@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReservaAulaController;
+use App\Http\Controllers\AulaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,3 +41,12 @@ Route::get('/login', function () {
 Route::get('/horariousuario', function () {
     return view('horarioUsuario');
 });
+
+
+
+Route::resource('reservaAula', ReservaAulaController::class);
+
+
+Route::get('/aulas', [AulaController::class,'index']);
+
+

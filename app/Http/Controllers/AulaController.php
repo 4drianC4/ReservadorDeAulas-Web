@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Reserva;
 use App\Models\Aula;
 
-use Illuminate\Http\Request;
-
-class ReservaAulaController extends Controller
+class AulaController extends Controller
 {
+    //
+
     public function index()
     {
-        return view('reservaUser');
+        $consulta = Aula::all();
+        //return $consulta;
+        //return view('homePageUser');
+        return view('homePageUser')->with('consulta', $consulta);
     }
 
     public function create()
@@ -32,7 +35,6 @@ class ReservaAulaController extends Controller
         $reserva = new Reserva();
         $reserva->fecha = $request->fecha;
         $reserva->hora_inicio = $request->hora_inicio;
-        $reserva->descripcion = $request->descripcion;
         $reserva->hora_fin = $request->hora_fin;
         $reserva->aula_id = $aula->id;
 
@@ -40,7 +42,7 @@ class ReservaAulaController extends Controller
 
         $reserva->usuario_id = $userdd; 
         $reserva->save();
-        return redirect()->route('reservaAula.index');
+        //return redirect()->route('reserva-aulas.index');
     }
 
     public function show($id)
@@ -61,7 +63,6 @@ class ReservaAulaController extends Controller
         $reserva->fecha = $request->fecha;
         $reserva->hora = $request->hora;
         $reserva->aula = $request->aula;
-        $reserva->usuario_id = $request->usuario_id;
         $reserva->save();
         //return redirect()->route('reserva-aulas.index');
     }
@@ -72,5 +73,4 @@ class ReservaAulaController extends Controller
         $reserva->delete();
         //return redirect()->route('reserva-aulas.index');
     }
-
 }

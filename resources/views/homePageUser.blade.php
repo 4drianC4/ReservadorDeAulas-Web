@@ -34,82 +34,13 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($consulta as $c)
                 <tr>
-                    <td>Aula 690A</td>
-                    <td>50</td>
-                    <td class="reserved">Reservada</td>
+                    <td>{{$c->nombre}}</td>
+                    <td>{{$c->capacidad}}</td>
+                    <td class="{{$c->estado == 'Disponible' ? 'available' : 'reserved'}}">{{$c->estado}}</td>
                 </tr>
-                <tr>
-                    <td>Aula 690B</td>
-                    <td>80</td>
-                    <td class="available">Disponible</td>
-                </tr>
-                <tr>
-                    <td>Aula 690C</td>
-                    <td>100</td>
-                    <td class="reserved">Reservada</td>
-                </tr>
-                <tr>
-                    <td>Aula 690D</td>
-                    <td>70</td>
-                    <td class="reserved">Reservada</td>
-                </tr>
-                <tr>
-                    <td>Aula 691A</td>
-                    <td>50</td>
-                    <td class="available">Disponible</td>
-                </tr>
-                <tr>
-                    <td>Aula 691B</td>
-                    <td>40</td>
-                    <td class="reserved">Reservada</td>
-                </tr>
-                <tr>
-                    <td>Aula 691C</td>
-                    <td>30</td>
-                    <td class="reserved">Reservada</td>
-                </tr>
-                <tr>
-                    <td>Aula 691D</td>
-                    <td>20</td>
-                    <td class="available">Disponible</td>
-                </tr>
-                <tr>
-                    <td>Aula 692A</td>
-                    <td>100</td>
-                    <td class="reserved">Reservada</td>
-                </tr>
-                <tr>
-                    <td>Aula 692B</td>
-                    <td>200</td>
-                    <td class="reserved">Reservada</td>
-                </tr>
-                <tr>
-                    <td>Aula 692C</td>
-                    <td>200</td>
-                    <td class="available">Disponible</td>
-                </tr>
-                <tr>
-                    <td>Aula 692D</td>
-                    <td>80</td>
-                    <td class="reserved">Reservada</td>
-                </tr>
-                <tr>
-                    <td>Aula 692E</td>
-                    <td>70</td>
-                    <td class="reserved">Reservada</td>
-                </tr>
-                <tr>
-                    <td>Aula 693A</td>
-                    <td>60</td>
-                    <td class="available">Disponible</td>
-                </tr>
-                <tr>
-                    <td>Aula 693B</td>
-                    <td>50</td>
-                    <td class="reserved">Reservada</td>
-                </tr>
-                <!-- Agrega más filas según tus aulas -->
+                @endforeach
             </tbody>
         </table>
     </div>
