@@ -25,6 +25,7 @@
 <form>
     <a href="{{url('/reservaraula')}}"><input type="button" value="Reserva" class = "btn-reserva"></a>
     <a href="{{url('/login')}}"><input type="button" value="Log out" class = "btn-log"></a>
+    <a href="{{url('/agregaraula')}}"><input type="button" value="agregar aula" class = "btn-aa"></a>
 </form>
 
     <div class="container">
