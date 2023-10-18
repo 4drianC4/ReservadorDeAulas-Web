@@ -40,169 +40,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Aula 690A</td>
-                    <td>50</td>
-                    <td class="reserved">Reservada</td>
-                    <td>
-                        <button id = "bb" class = "button">Editar</button> 
-                        <button onclick="document.getElementById('id01').style.display='block'" id = "bb" class = "button">Eliminar</button>
-                        <div id="id01" class="modal">
-                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-                            <form class="modal-content" action="/action_page.php">
-                              <div class="container">
-                                <h1>Eliminar Aula</h1>
-                                <p>¿Está seguro de que desea eliminar el aula?</p>
-                              
-                                <div class="clearfix">
-                                  <button class="button" id = "cancel" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
-                                  <button class="button" id = "delete" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Eliminar</button>
-                                </div>
-                              </div>
-                            </form>
-                          </div>
 
-                          <script>
-                            // Get the modal
-                            var modal = document.getElementById('id01');
-                            
-                            // When the user clicks anywhere outside of the modal, close it
-                            window.onclick = function(event) {
-                              if (event.target == modal) {
-                                modal.style.display = "none";
-                              }
-                            }
-                            </script>
-                    
-                    </td>
-                </tr>
+                @foreach($consulta as $aula)
                 <tr>
-                    <td>Aula 690B</td>
-                    <td>80</td>
-                    <td class="available">Disponible</td>
-                    <td>
-                        <button id = "bb" class = "button">Editar</button> 
-                        <button id = "bb" class = "button">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aula 690C</td>
-                    <td>100</td>
-                    <td class="reserved">Reservada</td>
+                    <td>{{$aula->nombre}}</td>
+                    <td>{{$aula->capacidad}}</td>
+                    <td class="{{$aula->estado == 'Disponible' ? 'available' : 'reserved'}}">{{$aula->estado}}</td>
                     <td>
                         <button id = "bb" class="button">Editar</button> 
                         <button id = "bb" class="button">Eliminar</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>Aula 690D</td>
-                    <td>70</td>
-                    <td class="reserved">Reservada</td>
-                    <td>
-                        <button id = "bb" class="button">Editar</button> 
-                        <button id = "bb" class="button">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aula 691A</td>
-                    <td>50</td>
-                    <td class="available">Disponible</td>
-                    <td>
-                        <button id = "bb" class="button">Editar</button> 
-                        <button id = "bb" class="button">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aula 691B</td>
-                    <td>40</td>
-                    <td class="reserved">Reservada</td>
-                    <td>
-                        <button id = "bb" class="button">Editar</button> 
-                        <button id = "bb" class="button">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aula 691C</td>
-                    <td>30</td>
-                    <td class="reserved">Reservada</td>
-                    <td>
-                        <button id = "bb" class="button">Editar</button> 
-                        <button id = "bb" class="button">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aula 691D</td>
-                    <td>20</td>
-                    <td class="available">Disponible</td>
-                    <td>
-                        <button id = "bb" class="button">Editar</button> 
-                        <button id = "bb" class="button">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aula 692A</td>
-                    <td>100</td>
-                    <td class="reserved">Reservada</td>
-                    <td>
-                        <button id = "bb" class="button">Editar</button> 
-                        <button id = "bb" class="button">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aula 692B</td>
-                    <td>200</td>
-                    <td class="reserved">Reservada</td>
-                    <td>
-                        <button id = "bb" class="button">Editar</button> 
-                        <button id = "bb" class="button">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aula 692C</td>
-                    <td>200</td>
-                    <td class="available">Disponible</td>
-                    <td>
-                        <button id = "bb" class="button">Editar</button> 
-                        <button id = "bb" class="button">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aula 692D</td>
-                    <td>80</td>
-                    <td class="reserved">Reservada</td>
-                    <td>
-                        <button id = "bb" class="button">Editar</button> 
-                        <button id = "bb" class="button">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aula 692E</td>
-                    <td>70</td>
-                    <td class="reserved">Reservada</td>
-                    <td>
-                        <button id = "bb" class="button">Editar</button> 
-                        <button id = "bb" class="button">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aula 693A</td>
-                    <td>60</td>
-                    <td class="available">Disponible</td>
-                    <td>
-                        <button id = "bb" class="button">Editar</button> 
-                        <button id = "bb" class="button">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aula 693B</td>
-                    <td>50</td>
-                    <td class="reserved">Reservada</td>
-                    <td>
-                        <button id = "bb" class="button">Editar</button> 
-                        <button id = "bb" class="button">Eliminar</button>
-                    </td>
-                </tr>
-                <!-- Agrega más filas según tus aulas -->
+                @endforeach
             </tbody>
         </table>
     </div>
@@ -220,14 +69,13 @@
     </div>
 
     <div>
-        <form action="/action_page.php">
-            <label for="birthday">Fecha:</label>
-            <input type="date" id="birthday" name="birthday">
+    <form action="">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha">
             <label for="appt">Horario de Inicio:</label>
             <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
             <label for="appt">Horario Fin:</label>
             <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
-
             <label for="appt">Tipo de Aula:</label>
             <select>
                 <option value="Cualquiera">Cualquiera</option>

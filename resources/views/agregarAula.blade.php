@@ -13,16 +13,28 @@
         </div>
         <div>
             <h1>Agregar Aula</h1>
-            <form action="#">
-                <p>ID Aula</p>
-                <p><input type="text" name="idAula" size="40"></p>
-                <p>ubicación</p>
-                <p><input type="text" name="ubi" size="40"></p>
-                <p>capacidad</p>
-                <p><input type="text" name="capacidad" size="40"></p>
-                <p>descripción</p>
-                <p><input type="text" name="descripcion" size="40"></p>
-                <p><input type="button" value="Agregar" class="btn-agregar"></p>
+            <form action="{{route('homeadmin.store')}}" method = "POST">
+                {{csrf_field()}}
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre del aula" required>
+                <label for="ubicacion">Ubicación:</label>
+                <input type="text" name="ubicacion" id="ubicacion" placeholder="Ubicación del aula" required>
+                <label for="capacidad">Capacidad:</label>
+                <input type="number" name="capacidad" id="capacidad" placeholder="Capacidad del aula" required>
+                <label for="tipo">Tipo:</label>
+                <select name="tipo" id="tipo">
+                    <option value="Auditorio">Auditorio</option>
+                    <option value="Común">Común</option>
+                    <option value="Laboratorio">Laboratorio</option>
+                </select>
+                <label for="descripcion">Descripción:</label>
+                <input type="text" name="descripcion" id="descripcion" placeholder="Descripción del aula" required>
+                <label for="estado">Estado:</label>
+                <select name="estado" id="estado">
+                    <option value="Disponible">Disponible</option>
+                    <option value="Reservada">Reservada</option>
+                </select>
+                <input type="submit" value="Agregar">
             </form>
         </div>
     </body>

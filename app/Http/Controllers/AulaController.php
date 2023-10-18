@@ -9,7 +9,6 @@ use App\Models\Aula;
 class AulaController extends Controller
 {
     //
-
     public function index()
     {
         $consulta = Aula::all();
@@ -18,59 +17,52 @@ class AulaController extends Controller
         return view('homePageUser')->with('consulta', $consulta);
     }
 
-    public function create()
-    {
-        return view('homePageUser');
+    public function create(){
+        $consulta = Aula::all();
+        //return $consulta;
+        //return view('homePageUser');
+        return view('homePageAdmin')->with('consulta', $consulta);
     }
 
-    public function store(Request $request)
-    {
-
-        $aux = $request->nombre_aula;
-        $aula = Aula::where('nombre', $aux)->first();
-        /*if ($aula) {
-            $idDelAula = $aula->id;
-        }*/
-
-        $reserva = new Reserva();
-        $reserva->fecha = $request->fecha;
-        $reserva->hora_inicio = $request->hora_inicio;
-        $reserva->hora_fin = $request->hora_fin;
-        $reserva->aula_id = $aula->id;
-
-        $userdd = 1;
-
-        $reserva->usuario_id = $userdd; 
-        $reserva->save();
-        //return redirect()->route('reserva-aulas.index');
+    public function store(Request $request){
+        $aula = new Aula();
+        $aula->nombre = $request->nombre;
+        $aula->ubicacion = $request->ubicacion;
+        $aula->capacidad = $request->capacidad;
+        $aula->tipo = $request->tipo;
+        $aula->descripcion = $request->descripcion;
+        $aula->estado = $request->estado;
+        $aula->save();
+        //return redirect()->route('reservaAula.index');
+        return view('homePageAdmin');
     }
 
-    public function show($id)
-    {
-        $reserva = Reserva::findOrFail($id);
-        //return view('reservaUser', compact('reserva'));
+    public function show($id){
+        $aula = Aula::find($id);
+        return view('mostrarHorario',compact('aula'));
     }
 
-    public function edit($id)
-    {
-        $reserva = Reserva::findOrFail($id);
-        //return view('reservaUser', compact('reserva'));
+    public function edit($id){
+        $aula = Aula::find($id);
+        return view('editarAula',compact('aula'));
     }
 
-    public function update(Request $request, $id)
-    {
-        $reserva = Reserva::findOrFail($id);
-        $reserva->fecha = $request->fecha;
-        $reserva->hora = $request->hora;
-        $reserva->aula = $request->aula;
-        $reserva->save();
-        //return redirect()->route('reserva-aulas.index');
+    public function update(Request $request, $id){
+        $aula = Aula::find($id);
+        $aula->nombre = $request->nombre;
+        $aula->ubicacion = $request->ubicacion;
+        $aula->capacidad = $request->capacidad;
+        $aula->tipo = $request->tipo;
+        $aula->descripcion = $request->descripcion;
+        $aula->estado = $request->estado;
+        $aula->save();
+        return redirect()->route('reservaAula.index');
     }
 
-    public function destroy($id)
-    {
-        $reserva = Reserva::findOrFail($id);
-        $reserva->delete();
-        //return redirect()->route('reserva-aulas.index');
+    public function destroy($id){
+        $aula = Aula::find($id);
+        $aula->delete();
+        return redirect()->route('reservaAula.index');
     }
+
 }
