@@ -47,5 +47,8 @@ Route::resource('reservaAula', ReservaAulaController::class);
 
 Route::resource('peticionesUs', peticionesController::class);
 
+Route::resource('homeadmin', AulaController::class);
 
 Route::get('/', [AulaController::class,'index']);
+
+Route::get('/homeadmin', [AulaController::class,'create']);

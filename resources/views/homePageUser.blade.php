@@ -61,8 +61,8 @@
     </div>
     <div>
         <form action="">
-            <label for="birthday">Fecha:</label>
-            <input type="date" id="birthday" name="birthday">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha">
             <label for="appt">Horario de Inicio:</label>
             <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
             <label for="appt">Horario Fin:</label>

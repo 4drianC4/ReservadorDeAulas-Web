@@ -8,8 +8,6 @@ use App\Models\Aula;
 
 class AulaController extends Controller
 {
-    //
-
     public function index()
     {
         $consulta = Aula::all();
