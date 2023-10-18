@@ -45,5 +45,7 @@ Route::get('/peticiones', function(){
 
 Route::resource('reservaAula', ReservaAulaController::class);
 
+Route::resource('peticionesUs', peticionesController::class);
+
 
 Route::get('/', [AulaController::class,'index']);
