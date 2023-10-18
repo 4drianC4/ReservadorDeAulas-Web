@@ -23,7 +23,7 @@
     </form>
       
 <form>
-    <a href="{{url('/reservaraula')}}"><input type="button" value="Reserva" class = "btn-reserva"></a>
+    <a href="{{url('/peticiones')}}"><input type="button" value="Peticiones" class = "btn-reserva"></a>
     <a href="{{url('/login')}}"><input type="button" value="Log out" class = "btn-log"></a>
     <a href="{{url('/agregaraula')}}"><input type="button" value="agregar aula" class = "btn-aa"></a>
 </form>
@@ -209,8 +209,8 @@
     <div class = "pagination-container">
         <div class="pagination">
             <a href="#">&laquo;</a>
-            <a href="#">1</a>
-            <a href="#" class="active">2</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
             <a href="#">3</a>
             <a href="#">4</a>
             <a href="#">5</a>
