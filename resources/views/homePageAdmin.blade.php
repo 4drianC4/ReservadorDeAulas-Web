@@ -47,7 +47,7 @@
                     <td>{{$aula->capacidad}}</td>
                     <td class="{{$aula->estado == 'Disponible' ? 'available' : 'reserved'}}">{{$aula->estado}}</td>
                     <td>
-                        <button id = "bb" class="button">Editar</button> 
+                    <a href="{{url('/editaraula')}}"><input type="button" value="editar aula" class = "button"></a> 
                         <form method="POST" action="{{ route('homeadmin.destroy', $aula->id) }}">
                             @csrf
                             @method('DELETE')
