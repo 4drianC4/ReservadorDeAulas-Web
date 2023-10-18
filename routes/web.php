@@ -43,6 +43,10 @@ Route::get('/peticiones', function(){
     return view('peticiones');
 });
 
+Route::get('/editaraula', function(){
+    return view('editarAula');
+});
+
 Route::resource('reservaAula', ReservaAulaController::class);
 
 Route::resource('peticionesUs', peticionesController::class);
