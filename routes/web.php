@@ -39,7 +39,9 @@ Route::get('/horariousuario', function () {
     return view('horarioUsuario');
 });
 
-
+Route::get('/peticiones', function(){
+    return view('peticiones');
+});
 
 Route::resource('reservaAula', ReservaAulaController::class);
 
@@ -49,7 +51,4 @@ Route::resource('homeadmin', AulaController::class);
 Route::get('/', [AulaController::class,'index']);
 
 Route::get('/homeadmin', [AulaController::class,'create']);
-
-
-
 
