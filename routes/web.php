@@ -27,9 +27,9 @@ Route::get('/agregaraula', function () {
 });
 
 
-Route::get('/homeadmin', function () {
+/*Route::get('/homeadmin', function () {
     return view('homePageAdmin');
-});
+});*/
 
 Route::get('/login', function () {
     return view('login');

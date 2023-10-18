@@ -18,10 +18,10 @@ class AulaController extends Controller
     }
 
     public function create(){
-        $consulta = Aula::all();
+        $consulta2 = Aula::all();
         //return $consulta;
         //return view('homePageUser');
-        return view('homePageAdmin')->with('consulta', $consulta);
+        return view('homePageAdmin')->with('consulta2', $consulta2);
     }
 
     public function store(Request $request){
@@ -34,7 +34,8 @@ class AulaController extends Controller
         $aula->estado = $request->estado;
         $aula->save();
         //return redirect()->route('reservaAula.index');
-        return view('homePageAdmin');
+        $consulta2 = Aula::all();
+        return view('homePageAdmin')->with('consulta2', $consulta2);
     }
 
     public function show($id){
@@ -62,7 +63,8 @@ class AulaController extends Controller
     public function destroy($id){
         $aula = Aula::find($id);
         $aula->delete();
-        return redirect()->route('reservaAula.index');
+        $consulta2 = Aula::all();
+        return view('homePageAdmin')->with('consulta2', $consulta2);
     }
 
 }

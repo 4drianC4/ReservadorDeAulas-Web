@@ -41,14 +41,18 @@
             </thead>
             <tbody>
 
-                @foreach($consulta as $aula)
+                @foreach($consulta2 as $aula)
                 <tr>
                     <td>{{$aula->nombre}}</td>
                     <td>{{$aula->capacidad}}</td>
                     <td class="{{$aula->estado == 'Disponible' ? 'available' : 'reserved'}}">{{$aula->estado}}</td>
                     <td>
                         <button id = "bb" class="button">Editar</button> 
-                        <button id = "bb" class="button">Eliminar</button>
+                        <form method="POST" action="{{ route('homeadmin.destroy', $aula->id) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" id = "bb" class="button">Eliminar</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
