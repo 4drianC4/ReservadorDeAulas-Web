@@ -39,17 +39,36 @@ Route::get('/horariousuario', function () {
     return view('horarioUsuario');
 });
 
+Route::get('/peticiones', function(){
+    return view('peticiones');
+});
 
+Route::get('/editaraula', function(){
+    return view('editarAula');
+});
 
 Route::resource('reservaAula', ReservaAulaController::class);
 
 Route::resource('homeadmin', AulaController::class);
 
+Route::resource('peticionesUs', peticionesController::class);
+
+Route::resource('homeadmin', AulaController::class);
 
 Route::get('/', [AulaController::class,'index']);
 
 Route::get('/homeadmin', [AulaController::class,'create']);
 
 
+Route::get('/homeadmin', [AulaController::class,'create']);
 
 
+
+
+Route::resource('peticionesUs', peticionesController::class);
+
+Route::resource('homeadmin', AulaController::class);
+
+Route::get('/', [AulaController::class,'index']);
+
+Route::get('/homeadmin', [AulaController::class,'create']);
