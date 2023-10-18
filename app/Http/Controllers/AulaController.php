@@ -63,7 +63,8 @@ class AulaController extends Controller
         $aula = Aula::find($id);
         $aula->delete();
         $consulta2 = Aula::all();
-        return view('homePageAdmin')->with('consulta2', $consulta2);
+        //return view('homePageAdmin')->with('consulta2', $consulta2);
+        return redirect('homeadmin');
     }
 
 }
