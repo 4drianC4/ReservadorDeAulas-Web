@@ -44,7 +44,7 @@ class AulaController extends Controller
     }
     public function edit($id){
         $aula = Aula::find($id);
-        return view('editarAula',compact('aula'));
+        return view('editarAula')->with('aula', $aula);
     }
 
     public function update(Request $request, $id){
@@ -56,7 +56,8 @@ class AulaController extends Controller
         $aula->descripcion = $request->descripcion;
         $aula->estado = $request->estado;
         $aula->save();
-        return redirect()->route('reservaAula.index');
+        $consulta2 = Aula::all();
+        return view('homePageAdmin')->with('consulta2', $consulta2);
     }
     public function destroy($id){
         $aula = Aula::find($id);

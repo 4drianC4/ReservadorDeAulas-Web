@@ -60,7 +60,6 @@ Route::get('/', [AulaController::class,'index']);
 Route::get('/homeadmin', [AulaController::class,'create']);
 
 
-Route::get('/homeadmin', [AulaController::class,'create']);
 
 
 

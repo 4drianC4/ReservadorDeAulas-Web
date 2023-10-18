@@ -12,30 +12,32 @@
             <img src="{{ asset('multimedia/logoumss.png') }}" class="iconcab">
         </div>
         <div>
-            <h1>Agregar Aula</h1>
-            <form action="{{route('homeadmin.store')}}" method = "POST">
-                {{csrf_field()}}
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre del aula" required>
-                <label for="ubicacion">Ubicación:</label>
-                <input type="text" name="ubicacion" id="ubicacion" placeholder="Ubicación del aula" required>
-                <label for="capacidad">Capacidad:</label>
-                <input type="number" name="capacidad" id="capacidad" placeholder="Capacidad del aula" required>
-                <label for="tipo">Tipo:</label>
-                <select name="tipo" id="tipo">
-                    <option value="Auditorio">Auditorio</option>
-                    <option value="Común">Común</option>
-                    <option value="Laboratorio">Laboratorio</option>
-                </select>
-                <label for="descripcion">Descripción:</label>
-                <input type="text" name="descripcion" id="descripcion" placeholder="Descripción del aula" required>
-                <label for="estado">Estado:</label>
-                <select name="estado" id="estado">
-                    <option value="Disponible">Disponible</option>
-                    <option value="Reservada">Reservada</option>
-                </select>
-                <input type="submit" value="Agregar">
-            </form>
-        </div>
+
+
+
+            <form action="{{ route('homeadmin.update', $aula->id) }}" method="POST">
+    @csrf
+    @method('PUT')
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre" value="{{ $aula->nombre }}" placeholder="Nombre del aula">
+    
+    <label for="ubicacion">Ubicación</label>
+    <input type="text" name="ubicacion" id="ubicacion" value="{{ $aula->ubicacion }}" placeholder="Ubicación del aula">
+    
+    <label for="capacidad">Capacidad</label>
+    <input type="text" name="capacidad" id="capacidad" value="{{ $aula->capacidad }}" placeholder="Capacidad del aula">
+    
+    <label for="tipo">Tipo</label>
+    <input type="text" name="tipo" id="tipo" value="{{ $aula->tipo }}" placeholder="Tipo de aula">
+    
+    <label for="descripcion">Descripción</label>
+    <input type="text" name="descripcion" id="descripcion" value="{{ $aula->descripcion }}" placeholder="Descripción del aula">
+    
+    <label for="estado">Estado</label>
+    <input type="text" name="estado" id="estado" value="{{ $aula->estado }}" placeholder="Estado del aula">
+    
+    <input type="submit" value="Editar">
+</form>
+       </div>
     </body>
 </html>
