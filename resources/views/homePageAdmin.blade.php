@@ -43,9 +43,11 @@
 
                 @foreach($consulta2 as $aula)
                 <tr>
-                    <td>{{$aula->nombre}}</td>
-                    <td>{{$aula->capacidad}}</td>
-                    <td class="{{$aula->estado == 'Disponible' ? 'available' : 'reserved'}}">{{$aula->estado}}</td>
+                    <td>{{$aula->nombreAmbiente}}</td>
+                    <td>{{$aula->capacidadAmbiente}}</td>
+                    <td class="{{$aula->activo == 1 ? 'available' : 'reserved'}}">
+                        {{$aula->activo == 1 ? 'Disponible' : 'no disponible'}}    
+                    </td>
                     <td>
                         <form method="PUT" action="{{ route('homeadmin.edit', $aula->id) }}">
                             @csrf

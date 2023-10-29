@@ -4,67 +4,81 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Reserva;
-use App\Models\Aula;
+use App\Models\Ambiente;
+use App\Models\TipoAmbiente;
 
 class AulaController extends Controller
 {
     //
     public function index()
     {
-        $consulta = Aula::all();
+        $consulta = Ambiente::all();
         //return $consulta;
         //return view('homePageUser');
         return view('homePageUser')->with('consulta', $consulta);
     }
 
     public function create(){
-        $consulta2 = Aula::all();
+        $consulta2 = Ambiente::all();
         //return $consulta;
         //return view('homePageUser');
         return view('homePageAdmin')->with('consulta2', $consulta2);
     }
 
     public function store(Request $request){
-        $aula = new Aula();
-        $aula->nombre = $request->nombre;
-        $aula->ubicacion = $request->ubicacion;
-        $aula->capacidad = $request->capacidad;
-        $aula->tipo = $request->tipo;
-        $aula->descripcion = $request->descripcion;
-        $aula->estado = $request->estado;
-        $aula->save();
-        //return redirect()->route('reservaAula.index');
-        $consulta2 = Aula::all();
-        return view('homePageAdmin')->with('consulta2', $consulta2);
+        $Ambiente = new Ambiente();
+        $Ambiente->nombreAmbiente = $request->nombre;
+        $Ambiente->descripcionAmbiente = $request->descripcion;
+        $Ambiente->ubicacionAmbiente = $request->ubicacion;
+        $Ambiente->capacidadAmbiente = $request->capacidad;
+        $Ambiente->activo = $request->activo;
+        $Ambiente->inhabilitado = $request->inhabilitado;
+        $Ambiente->tipoAmbiente_id = $request->tipo;
+        $Ambiente->save();
+
+        $consulta2 = Ambiente::all();
+        return redirect ('homeadmin');
     }
 
     public function show($id){
-        $aula = Aula::find($id);
-        return view('mostrarHorario',compact('aula'));
+        $Ambiente = Ambiente::find($id);
+        return view('mostrarHorario',compact('Ambiente'));
     }
     public function edit($id){
-        $aula = Aula::find($id);
-        return view('editarAula')->with('aula', $aula);
+        $Ambiente = Ambiente::find($id);
+        return view('editarAula')->with('aula', $Ambiente);
     }
 
     public function update(Request $request, $id){
-        $aula = Aula::find($id);
-        $aula->nombre = $request->nombre;
-        $aula->ubicacion = $request->ubicacion;
-        $aula->capacidad = $request->capacidad;
-        $aula->tipo = $request->tipo;
-        $aula->descripcion = $request->descripcion;
-        $aula->estado = $request->estado;
-        $aula->save();
-        $consulta2 = Aula::all();
-        return view('homePageAdmin')->with('consulta2', $consulta2);
+        $Ambiente = Ambiente::find($id);
+        $Ambiente->nombreAmbiente = $request->nombre;
+        $Ambiente->descripcionAmbiente = $request->descripcion;
+        $Ambiente->ubicacionAmbiente = $request->ubicacion;
+        $Ambiente->capacidadAmbiente = $request->capacidad;
+        $Ambiente->activo = $request->activo;
+        $Ambiente->inhabilitado = $request->inhabilitado;
+        $Ambiente->tipoAmbiente_id = $request->tipo;
+        $Ambiente->save();
+        $consulta2 = Ambiente::all();
+        return redirect('homeadmin');
     }
     public function destroy($id){
-        $aula = Aula::find($id);
-        $aula->delete();
-        $consulta2 = Aula::all();
+        $Ambiente = Ambiente::find($id);
+        //$Ambiente->delete();
+        $Ambiente->activo = 0;
+        $Ambiente->inhabilitado = 1;
+        $Ambiente->save();
+        $consulta2 = Ambiente::all();
         //return view('homePageAdmin')->with('consulta2', $consulta2);
+
         return redirect('homeadmin');
     }
 
+//controladores para el tipo de ambiente
+    public function showTipo(){
+        $consulta3 = TipoAmbiente::all();
+        //return $consulta;
+        //return view('homePageUser');
+        return view('agregarAula')->with('consulta3', $consulta3);
+    }
 }

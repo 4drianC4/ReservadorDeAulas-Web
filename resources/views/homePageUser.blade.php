@@ -39,9 +39,11 @@
             <tbody>
                 @foreach($consulta as $c)
                 <tr>
-                    <td>{{$c->nombre}}</td>
-                    <td>{{$c->capacidad}}</td>
-                    <td class="{{$c->estado == 'Disponible' ? 'available' : 'reserved'}}">{{$c->estado}}</td>
+                    <td>{{$c->nombreAmbiente}}</td>
+                    <td>{{$c->capacidadAmbiente}}</td>
+                    <td class="{{$c->activo == 1 ? 'available' : 'reserved'}}">
+                        {{$c->activo == 1 ? 'Disponible' : 'Reservada'}}    
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

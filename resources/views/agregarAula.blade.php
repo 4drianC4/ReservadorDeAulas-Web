@@ -23,16 +23,21 @@
                 <input type="number" name="capacidad" id="capacidad" placeholder="Capacidad del aula" required>
                 <label for="tipo">Tipo:</label>
                 <select name="tipo" id="tipo">
-                    <option value="Auditorio">Auditorio</option>
-                    <option value="Común">Común</option>
-                    <option value="Laboratorio">Laboratorio</option>
+                    <option value="1">Auditorio</option>
+                    <option value="2">Común</option>
+                    <option value="3">Laboratorio</option>
                 </select>
                 <label for="descripcion">Descripción:</label>
                 <input type="text" name="descripcion" id="descripcion" placeholder="Descripción del aula" required>
-                <label for="estado">Estado:</label>
-                <select name="estado" id="estado">
-                    <option value="Disponible">Disponible</option>
-                    <option value="Reservada">Reservada</option>
+                <label for="activo">Estado:</label>
+                <select name="activo" id="activo">
+                    <option value="1">Disponible</option>
+                    <option value="0">Reservada</option>
+                </select>
+                <label for="inhabilitado">Inhabilitado:</label>
+                <select name="inhabilitado" id="inhabilitado">
+                    <option value="1">Si</option>
+                    <option value="0">No</option>
                 </select>
                 <input type="submit" value="Agregar">
             </form>

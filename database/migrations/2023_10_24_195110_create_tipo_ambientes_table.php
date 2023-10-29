@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDiasTable extends Migration
+class CreateTipoAmbientesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateDiasTable extends Migration
      */
     public function up()
     {
-        Schema::create('dias', function (Blueprint $table) {
+        Schema::create('tipo_ambientes', function (Blueprint $table) {
             $table->id();
-            $table->string('dia');
+            $table->string('nombreTipo', 20);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateDiasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dias');
+        Schema::dropIfExists('tipo_ambientes');
     }
 }
