@@ -12,17 +12,17 @@ class AulaController extends Controller
     //
     public function index()
     {
-        $consulta = Ambiente::all();
+        $consulta = Ambiente::paginate(2);
         //return $consulta;
         //return view('homePageUser');
         return view('homePageUser')->with('consulta', $consulta);
     }
 
     public function create(){
-        $consulta2 = Ambiente::all();
+        $consulta = Ambiente::paginate(2);
         //return $consulta;
         //return view('homePageUser');
-        return view('homePageAdmin')->with('consulta2', $consulta2);
+        return view('homePageAdmin')->with('consulta', $consulta);
     }
 
     public function store(Request $request){
@@ -81,4 +81,6 @@ class AulaController extends Controller
         //return view('homePageUser');
         return view('agregarAula')->with('consulta3', $consulta3);
     }
+
+    
 }

@@ -17,8 +17,9 @@
     </div>
 
 
-    <form class="example" action="/action_page.php">
-        <input type="text" placeholder="Search.." name="search">
+
+    <form class="example" action = "{{route('filtro.filterNameAdmin')}}" method="GET">
+        <input type="text" placeholder="Search.." name="nombre">
         <button type="submit"><i class="fa fa-search"></i></button>
     </form>
       
@@ -41,7 +42,7 @@
             </thead>
             <tbody>
 
-                @foreach($consulta2 as $aula)
+                @foreach($consulta as $aula)
                 <tr>
                     <td>{{$aula->nombreAmbiente}}</td>
                     <td>{{$aula->capacidadAmbiente}}</td>
@@ -66,6 +67,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{$consulta->links()}}
     </div>
     <div class = "pagination-container">
         <div class="pagination">
@@ -106,8 +108,19 @@
                 <option value="200">200</option>
             </select>
             <input type="submit" value="Filtrar">
-        </form>
+    </form>
+
+    <form action = "{{route('filtro.filterCapacidadAdmin')}}" method="GET">
+        <label for="capacidad">Capacidad:</label>
+        <input type="number" name="capacidad" id="capacidad" placeholder="Capacidad del aula" required>
+        <input type="submit" value="FiltrarCapacidad">
+    </form>
+
+
     </div>
 
 </body>
 </html>
+
+
+

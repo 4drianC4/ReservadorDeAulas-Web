@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservaAulaController;
 use App\Http\Controllers\AulaController;
+use App\Http\Controllers\peticionesController;
+use App\Http\Controllers\FiltrosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,5 +63,15 @@ Route::get('/homeadmin', [AulaController::class,'create']);
 
 
 
+Route::get('filtro/filterCapacidadAdmin', [FiltrosController::class, 'filterCapacidadAdmin'])->name('filtro.filterCapacidadAdmin');
 
+
+
+Route::get('filtro/filterNameAdmin', [FiltrosController::class, 'filterNameAdmin'])->name('filtro.filterNameAdmin');
+
+
+Route::get('filtro/filterCapacidadUser', [FiltrosController::class, 'filterCapacidadUser'])->name('filtro.filterCapacidadUser');
+
+
+Route::get('filtro/filterNameUser', [FiltrosController::class, 'filterNameUser'])->name('filtro.filterNameUser');
 

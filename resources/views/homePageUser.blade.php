@@ -14,12 +14,12 @@
         <img src="{{ asset('multimedia/logoumss.png') }}" class="iconcab">
     </div>
 
-    
-<form class="example" action="/action_page.php">
-  <input type="text" placeholder="Search.." name="search">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
+    <form class="example" action = "{{route('filtro.filterNameUser')}}" method="GET">
+        <input type="text" placeholder="Search.." name="nombre">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
 
+    
 <form>
     <a href="{{url('/reservaraula')}}"><input type="button" value="Reserva" class = "btn-reserva"></a>
     <a href="{{url('/login')}}"><input type="button" value="Log in" class = "btn-log"></a>
@@ -48,6 +48,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{$consulta->links()}}
     </div>
     <div class = "pagination-container">
         <div class="pagination">
@@ -88,6 +89,13 @@
             </select>
             <input type="submit" value="Filtrar">
         </form>
+
+
+        <form action = "{{route('filtro.filterCapacidadUser')}}" method="GET">
+        <label for="capacidad">Capacidad:</label>
+        <input type="number" name="capacidad" id="capacidad" placeholder="Capacidad del aula" required>
+        <input type="submit" value="FiltrarCapacidad">
+    </form>
     </div>
 
     
