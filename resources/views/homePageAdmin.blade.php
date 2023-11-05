@@ -98,11 +98,8 @@
             <input type="submit" value="Filtrar">
     </form>
 
-    <form action = "{{route('filtro.filterCapacidadAdmin')}}" method="GET">
-        <label for="capacidad">Capacidad:</label>
-        <input type="number" name="capacidad" id="capacidad" placeholder="Capacidad del aula" required>
-        <input type="submit" value="FiltrarCapacidad">
-    </form>
+    
+    
 
 
     </div>
