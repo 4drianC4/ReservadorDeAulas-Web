@@ -74,10 +74,18 @@ body{
   }
   
   .pagination {
-    display: inline-block;
-    /*I want the pagination in the center of the screen*/
+    display: inline-flex;
+    padding-left: 0;
+    margin: 20px 0;
   }
   
+  .pagination li {
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    list-style-type: none;
+    background-color: #ddd;
+    
+  }
   .pagination a {
     color: black;
     float: left;
@@ -88,12 +96,12 @@ body{
   }
   
   .pagination a.active {
-    background-color: #4CAF50;
+    background-color: #2196f3;
     color: white;
-    border: 1px solid #4CAF50;
+    border: 1px solid #2196f3;
   }
   
-  .pagination a:hover:not(.active) {background-color: #ddd;}
+  .pagination a:hover:not(.active) {background-color: #2196f3;}
   
   
   /*Del formulario de abajo */

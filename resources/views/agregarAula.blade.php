@@ -42,5 +42,13 @@
                 <input type="submit" value="Agregar">
             </form>
         </div>
+        <div>
+            <form action="{{route('homeadmin.procesarCSV')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="archivo_csv">
+                <button type="submit">Cargar Aulas desde CSV</button>
+            </form>
+        </div>
+
     </body>
 </html>

@@ -75,3 +75,4 @@ Route::get('filtro/filterCapacidadUser', [FiltrosController::class, 'filterCapac
 
 Route::get('filtro/filterNameUser', [FiltrosController::class, 'filterNameUser'])->name('filtro.filterNameUser');
 
+Route::post('homeadmin/procesarCSV', [AulaController::class, 'procesarCSV'])->name('homeadmin.procesarCSV');

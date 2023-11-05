@@ -67,22 +67,10 @@
                 @endforeach
             </tbody>
         </table>
-        {{$consulta->links()}}
-    </div>
-    <div class = "pagination-container">
-        <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">&raquo;</a>
+        <div class = "pagination-container">
+            {{$consulta->links('vendor.pagination.custom')}}
         </div>
     </div>
-
-    <div>
     <form action="">
             <label for="fecha">Fecha:</label>
             <input type="date" id="fecha" name="fecha">

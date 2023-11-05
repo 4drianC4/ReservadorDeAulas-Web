@@ -12,14 +12,12 @@ class AulaController extends Controller
     //
     public function index()
     {
-        $consulta = Ambiente::paginate(2);
-        //return $consulta;
-        //return view('homePageUser');
+        $consulta = Ambiente::paginate(1);
         return view('homePageUser')->with('consulta', $consulta);
     }
 
     public function create(){
-        $consulta = Ambiente::paginate(2);
+        $consulta = Ambiente::paginate(1);
         //return $consulta;
         //return view('homePageUser');
         return view('homePageAdmin')->with('consulta', $consulta);
