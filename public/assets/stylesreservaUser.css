@@ -40,6 +40,7 @@ form {
     flex-direction: column; /* Cambiamos la dirección de flex a columna */
     justify-content: center; /* Centramos verticalmente los elementos */
     align-items: stretch; /* Estiramos los elementos para que ocupen todo el ancho */
+    margin-bottom: 5%;
 }
 
 /* Estilo para las etiquetas y campos de entrada */
@@ -85,7 +86,7 @@ input[type="submit"]:hover,
     margin-top: 10px; /* Agrega un espacio arriba del botón */
 }
 
-input[type="button"] {
+input[type="button"]{
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;

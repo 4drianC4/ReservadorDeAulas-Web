@@ -57,10 +57,19 @@
         <form action="">
             <label for="fecha">Fecha:</label>
             <input type="date" id="fecha" name="fecha">
-            <label for="appt">Horario de Inicio:</label>
-            <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
-            <label for="appt">Horario Fin:</label>
-            <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
+            <label for="appt">Horarios:</label>
+            <select id="appt" name="appt" required >
+                <option value="06:45">06:45 - 08:15</option>
+                <option value="08:15">08:15 - 09:45</option>
+                <option value="09:45">09:45 - 11:15</option>
+                <option value="11:15">11:15 - 12:45</option>
+                <option value="12:45">12:45 - 14:15</option>
+                <option value="14:15">14:15 - 15:45</option>
+                <option value="15:45">15:45 - 17:15</option>
+                <option value="17:15">17:15 - 18:45</option>
+                <option value="18:45">18:45 - 20:15</option>
+                <option value="20:15">20:15 - 21:45</option>
+            </select>
             <label for="appt">Tipo de Aula:</label>
             <select>
                 <option value="Cualquiera">Cualquiera</option>
