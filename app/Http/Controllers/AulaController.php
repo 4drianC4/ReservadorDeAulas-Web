@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Reserva;
 use App\Models\Ambiente;
 use App\Models\TipoAmbiente;
+use League\Csv\Reader;
+use Illuminate\Support\Facades\Storage;
 
 class AulaController extends Controller
 {
@@ -83,4 +85,26 @@ class AulaController extends Controller
     }
 
     
+    public function procesarCSV(Request $request)
+{
+    $file = $request->file('archivo_csv');
+    $reader = Reader::createFromPath($file->getPathname(), 'r');
+    $reader->setDelimiter(';');
+    $reader->setHeaderOffset(0);
+    $records = $reader->getRecords();
+    foreach ($records as $record) {
+        $Ambiente = new Ambiente();
+        $Ambiente->nombreAmbiente = $record['nombreAmbiente'];
+        $Ambiente->descripcionAmbiente = $record['descripcionAmbiente'];
+        $Ambiente->ubicacionAmbiente = $record['ubicacionAmbiente'];
+        $Ambiente->capacidadAmbiente = $record['capacidadAmbiente'];
+        $Ambiente->activo = $record['activo'];
+        $Ambiente->inhabilitado = $record['inhabilitado'];
+        $Ambiente->tipoAmbiente_id = $record['tipoAmbiente_id'];
+        var_dump($Ambiente); // Imprime la variable en la página web
+        $Ambiente->save();
+    }
+    return redirect('homeadmin');
+}
+
 }
