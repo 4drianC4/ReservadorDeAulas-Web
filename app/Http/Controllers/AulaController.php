@@ -14,14 +14,12 @@ class AulaController extends Controller
     //
     public function index()
     {
-        $consulta = Ambiente::paginate(1);
+        $consulta = Ambiente::paginate(5);
         return view('homePageUser')->with('consulta', $consulta);
     }
 
     public function create(){
-        $consulta = Ambiente::paginate(1);
-        //return $consulta;
-        //return view('homePageUser');
+        $consulta = Ambiente::paginate(5);
         return view('homePageAdmin')->with('consulta', $consulta);
     }
 
@@ -83,26 +81,25 @@ class AulaController extends Controller
     }
 
     
-    public function procesarCSV(Request $request)
-{
-    $file = $request->file('archivo_csv');
-    $reader = Reader::createFromPath($file->getPathname(), 'r');
-    $reader->setDelimiter(';');
-    $reader->setHeaderOffset(0);
-    $records = $reader->getRecords();
-    foreach ($records as $record) {
-        $Ambiente = new Ambiente();
-        $Ambiente->nombreAmbiente = $record['nombreAmbiente'];
-        $Ambiente->descripcionAmbiente = $record['descripcionAmbiente'];
-        $Ambiente->ubicacionAmbiente = $record['ubicacionAmbiente'];
-        $Ambiente->capacidadAmbiente = $record['capacidadAmbiente'];
-        $Ambiente->activo = $record['activo'];
-        $Ambiente->inhabilitado = $record['inhabilitado'];
-        $Ambiente->tipoAmbiente_id = $record['tipoAmbiente_id'];
-        var_dump($Ambiente); // Imprime la variable en la página web
-        $Ambiente->save();
+    public function procesarCSV(Request $request){
+        $file = $request->file('archivo_csv');
+        $reader = Reader::createFromPath($file->getPathname(), 'r');
+        $reader->setDelimiter(';');
+        $reader->setHeaderOffset(0);
+        $records = $reader->getRecords();
+        foreach ($records as $record) {
+            $Ambiente = new Ambiente();
+            $Ambiente->nombreAmbiente = $record['nombreAmbiente'];
+            $Ambiente->descripcionAmbiente = $record['descripcionAmbiente'];
+            $Ambiente->ubicacionAmbiente = $record['ubicacionAmbiente'];
+            $Ambiente->capacidadAmbiente = $record['capacidadAmbiente'];
+            $Ambiente->activo = $record['activo'];
+            $Ambiente->inhabilitado = $record['inhabilitado'];
+            $Ambiente->tipoAmbiente_id = $record['tipoAmbiente_id'];
+            var_dump($Ambiente); // Imprime la variable en la página web
+            $Ambiente->save();
+        }
+        return redirect('homeadmin');
     }
-    return redirect('homeadmin');
-}
 
 }
