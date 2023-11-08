@@ -12,22 +12,32 @@ body{
     padding: 10px;
   }
   
+  
   .container {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
-  
+
+  @media (max-width: 480px) {
+    table {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+  }
+
   table {
     width: 50%;
     border-collapse: collapse;
-  }
-  table {
+    text-align: center;
     width: 100%;
     border-collapse: collapse;
+    margin: 30px auto;
+    margin-right: 500px;
   }
   table, th, td {
     border: 1px solid #ddd;
@@ -105,32 +115,31 @@ body{
   
   
   /*Del formulario de abajo */
-form {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: row; /* Cambiamos la dirección de flex a fila */
-    flex-wrap: wrap; /* Permitimos múltiples líneas */
-    justify-content: space-between;
-    align-items: center; /* Alineamos verticalmente los elementos */
+
+.form {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  flex-direction: row; /* Cambiamos la dirección de flex a fila */
+  flex-wrap: wrap; /* Permitimos múltiples líneas */
+  justify-content: space-between;
+  align-items: center; /* Alineamos verticalmente los elementos */
 }
 
-label, input[type="date"], input[type="time"], input[type="submit"],select {
-    /*flex-basis: calc(25% - 10px); /* 25% de ancho con margen derecho */
-    /*margin-right: 10px;*/
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px; 
-    width: 50%;  
+label,input[type="date"], input[type="time"], input[type="submit"],input[type="number"],select {    
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px; 
+  width: 47%;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
 }
-
-
   
 input[type="time"] {
     min-width: 150px; /* Establecemos un ancho mínimo */
@@ -152,15 +161,6 @@ select, input[type="submit"] {
     margin-right: 0;
 }
   
-  
-.mobile-container {
-    max-width: 480px;
-    margin: auto;
-    background-color: #555;
-    height: 500px;
-    color: white;
-    border-radius: 10px;
-}
   
   
   .topnav {
@@ -212,6 +212,7 @@ select, input[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 6%;
   }
 
   input[type="button"] {
@@ -245,27 +246,13 @@ select, input[type="submit"] {
     cursor: pointer;
   }
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
   /* Float cancel and delete buttons and add an equal width */
   .cancelbtn, .deletebtn {
     float: left;
     width: 50%;
   }
   
-  
-  /* Add padding and center-align text to the container */
-  .container {
-    padding: 16px;
-    text-align: center;
-  }
+
   
   /* The Modal (background) */
   .modal {
@@ -363,3 +350,84 @@ select, input[type="submit"] {
   }
   
   /*Aqui termina la parte de admin distinta*/
+
+.headcontainer{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10%;
+  margin-left: -20%;
+  padding-left: 100px;
+}
+
+.menu-container {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 300px;
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li a{
+  min-width: 100%;
+}
+
+.dropdown-menu li a:hover{
+  background-color: #ddd;
+}
+
+.menu-container:hover .dropdown-menu {
+  display: block;
+}
+
+.menu-container a{
+  color: white;
+  text-decoration: none;
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 10px 30px;
+  border-bottom: 2px solid #ffffff;
+  background-color: #2196f3;
+  max-width: 200px;
+  text-shadow: 1px 1px black;
+}
+
+#boton-h {
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 5px;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: center;
+  user-select: none;
+}
+
+#boton:hover{
+  background: grey;
+}
+
+#menu {
+  display: none;
+}
+
+#menu:checked  ~ ul{
+  display:block;
+}
+
+#menu:checked ~ label {
+  background: lightgrey; 
+}
+

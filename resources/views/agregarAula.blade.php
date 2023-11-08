@@ -13,6 +13,7 @@
         </div>
         <div>
             <h1>Agregar Aula</h1>
+            <a href="{{url('/homeadmin')}}"><input type="button" value="Volver" class = "btn-reserva"></a>
             <form action="{{route('homeadmin.store')}}" method = "POST">
                 {{csrf_field()}}
                 <label for="nombre">Nombre:</label>

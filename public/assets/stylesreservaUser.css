@@ -44,7 +44,7 @@ form {
 }
 
 /* Estilo para las etiquetas y campos de entrada */
-label, input[type="text"], input[type="date"], input[type="time"], select {
+label, input[type="text"], input[type="date"], input[type="time"], input[type="number"], input[type="file"],select {
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
