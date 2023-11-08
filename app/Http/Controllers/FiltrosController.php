@@ -14,7 +14,7 @@ class FiltrosController extends Controller
 {
     public function filterCapacidadAdmin(Request $request){
         $capacidadMinima = $request->capacidad;
-        $consulta = Ambiente::where('capacidadAmbiente', '>=', $capacidadMinima)->orderBy('capacidadAmbiente', 'asc')->paginate(5); // Pagina los resultados, puedes ajustar el número de resultados por página
+        $consulta = Ambiente::where('capacidadAmbiente', '>=', $capacidadMinima)->orderBy('capacidadAmbiente', 'asc')->paginate(5);
         return view('homePageAdmin')->with('consulta', $consulta);
     }
     public function filterNameAdmin(Request $request){

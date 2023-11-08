@@ -14,17 +14,22 @@
         <img src="{{ asset('multimedia/logoumss.png') }}" class="iconcab">
     </div>
 
-    <form class="example" action = "{{route('filtro.filterNameUser')}}" method="GET">
-        <input type="text" placeholder="Search.." name="nombre">
-        <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
+    <div class="headcontainer">
+        <nav class="menu-container">
+                <input type="button" id="menu">
+                <label for="menu" id="boton-h">☰</label>
+                <ul class="dropdown-menu">
+                    <li><a href="{{url('/reservaraula')}}">Reservar aula</a></li>
+                    <li><a href="{{url('/login')}}">Cerrar Sesión</a></li>
+                    <li><a href="{{url('/horariousuario')}}">Horarios de Usuario</a></li>
+                </ul>
+        </nav>
 
-    
-<form>
-    <a href="{{url('/reservaraula')}}"><input type="button" value="Reserva" class = "btn-reserva"></a>
-    <a href="{{url('/login')}}"><input type="button" value="Log in" class = "btn-log"></a>
-    <a href="{{url('/horariousuario')}}"><input type="button" value="Horarios de usuario" class = "btn-horario"></a>
-</form>
+        <form class="example" action = "{{route('filtro.filterNameUser')}}" method="GET">
+            <input type="text" placeholder="Search.." name="nombre">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
 
     <div class="container">
         <h1>Listado de Aulas</h1>
@@ -53,20 +58,29 @@
         </div>
     </div>
     
-    <div>
+    <div class="form">
         <form action="">
             <label for="fecha">Fecha:</label>
             <input type="date" id="fecha" name="fecha">
-            <label for="appt">Horario de Inicio:</label>
-            <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
-            <label for="appt">Horario Fin:</label>
-            <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
+            <label for="appt">Horarios:</label>
+            <select id="appt" name="appt" required >
+                <option value="06:45">06:45 - 08:15</option>
+                <option value="08:15">08:15 - 09:45</option>
+                <option value="09:45">09:45 - 11:15</option>
+                <option value="11:15">11:15 - 12:45</option>
+                <option value="12:45">12:45 - 14:15</option>
+                <option value="14:15">14:15 - 15:45</option>
+                <option value="15:45">15:45 - 17:15</option>
+                <option value="17:15">17:15 - 18:45</option>
+                <option value="18:45">18:45 - 20:15</option>
+                <option value="20:15">20:15 - 21:45</option>
+            </select>
             <label for="appt">Tipo de Aula:</label>
             <select>
                 <option value="Cualquiera">Cualquiera</option>
-                <option value="Auditorio">Auditorio</option>
-                <option value="Común">Común</option>
-                <option value="Laboratorio">Laboratorio</option>
+                <option value="1">Auditorio</option>
+                <option value="2">Común</option>
+                <option value="3">Laboratorio</option>
             </select>
             <label for="appt">Capacidad:</label>
             <select>
@@ -80,8 +94,9 @@
             </select>
             <input type="submit" value="Filtrar">
         </form>
+    </div>
 
-
+    <div class="form">
         <form action = "{{route('filtro.filterCapacidadUser')}}" method="GET">
         <label for="capacidad">Capacidad:</label>
         <input type="number" name="capacidad" id="capacidad" placeholder="Capacidad del aula" required>

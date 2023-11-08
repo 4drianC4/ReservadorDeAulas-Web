@@ -13,6 +13,7 @@
         </div>
         <div>
             <h1>Agregar Aula</h1>
+            <a href="{{url('/homeadmin')}}"><input type="button" value="Volver" class = "btn-reserva"></a>
             <form action="{{route('homeadmin.store')}}" method = "POST">
                 {{csrf_field()}}
                 <label for="nombre">Nombre:</label>
@@ -41,18 +42,12 @@
                 </select>
                 <input type="submit" value="Agregar">
             </form>
-
-            <form action="{{route('homeadmin.procesarCSV')}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <input type="file" name="archivo_csv">
-                <button type="submit">Cargar Aulas desde CSV</button>
-            </form>
         </div>
         <div>
             <form action="{{route('homeadmin.procesarCSV')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="file" name="archivo_csv">
-                <button type="submit">Cargar Aulas desde CSV</button>
+                <button type="submit" class="btn-mostrar">Cargar Aulas desde CSV</button>
             </form>
         </div>
 

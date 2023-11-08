@@ -16,18 +16,24 @@
         <!-- Simulate a smartphone / tablet -->
     </div>
 
+    <div class="headcontainer">
+     <!-- menu desplegable -->
+        <nav class="menu-container">
+            <input type="button" id="menu">
+            <label for="menu" id="boton-h">☰</label>
+            <ul class="dropdown-menu">
+                <li><a href="{{url('/peticiones')}}">Peticiones</a></li>
+                <li><a href="{{url('/login')}}">Cerrar sesion</a></li>
+                <li><a href="{{url('/agregaraula')}}">Agregar ambiente</a></li>
+            </ul>
+        </nav>
+    
 
-
-    <form class="example" action = "{{route('filtro.filterNameAdmin')}}" method="GET">
-        <input type="text" placeholder="Search.." name="nombre">
-        <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-      
-<form>
-    <a href="{{url('/peticiones')}}"><input type="button" value="Peticiones" class = "btn-reserva"></a>
-    <a href="{{url('/login')}}"><input type="button" value="Log out" class = "btn-log"></a>
-    <a href="{{url('/agregaraula')}}"><input type="button" value="agregar aula" class = "btn-aa"></a>
-</form>
+        <form class="example" action = "{{route('filtro.filterNameAdmin')}}" method="GET">
+            <input type="text" placeholder="Search.." name="nombre">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div> 
 
     <div class="container">
         <h1>Listado de Aulas</h1>
@@ -50,18 +56,20 @@
                         {{$aula->activo == 1 ? 'Disponible' : 'no disponible'}}    
                     </td>
                     <td>
-                        <form method="PUT" action="{{ route('homeadmin.edit', $aula->id) }}">
-                            @csrf
-                            @method('PUT')
-                            <button type="submit" id = "bb" class="button">Editar</button>
-                            
-                        </form>
-                    
-                        <form method="POST" action="{{ route('homeadmin.destroy', $aula->id) }}">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" id = "bb" class="button">Eliminar</button>
-                        </form>
+                        <div class="container">
+                            <form method="PUT" action="{{ route('homeadmin.edit', $aula->id) }}">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" id = "bb" class="button">Editar</button>
+                                
+                            </form>
+                        
+                            <form method="POST" action="{{ route('homeadmin.destroy', $aula->id) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" id = "bb" class="button">Eliminar</button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
                 @endforeach
@@ -71,13 +79,23 @@
             {{$consulta->links('vendor.pagination.custom')}}
         </div>
     </div>
+    <div class="form">
     <form action="">
             <label for="fecha">Fecha:</label>
             <input type="date" id="fecha" name="fecha">
-            <label for="appt">Horario de Inicio:</label>
-            <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
-            <label for="appt">Horario Fin:</label>
-            <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
+            <label for="appt">Horarios:</label>
+            <select id="appt" name="appt" required >
+                <option value="06:45">06:45 - 08:15</option>
+                <option value="08:15">08:15 - 09:45</option>
+                <option value="09:45">09:45 - 11:15</option>
+                <option value="11:15">11:15 - 12:45</option>
+                <option value="12:45">12:45 - 14:15</option>
+                <option value="14:15">14:15 - 15:45</option>
+                <option value="15:45">15:45 - 17:15</option>
+                <option value="17:15">17:15 - 18:45</option>
+                <option value="18:45">18:45 - 20:15</option>
+                <option value="20:15">20:15 - 21:45</option>
+            </select>
             <label for="appt">Tipo de Aula:</label>
             <select>
                 <option value="Cualquiera">Cualquiera</option>
@@ -97,15 +115,14 @@
             </select>
             <input type="submit" value="Filtrar">
     </form>
+    </div>
 
-    
+    <div class="form">
     <form action = "{{route('filtro.filterCapacidadAdmin')}}" method="GET">
         <label for="capacidad">Capacidad:</label>
         <input type="number" name="capacidad" id="capacidad" placeholder="Capacidad del aula" required>
         <input type="submit" value="FiltrarCapacidad">
     </form>
-
-
     </div>
 
 </body>

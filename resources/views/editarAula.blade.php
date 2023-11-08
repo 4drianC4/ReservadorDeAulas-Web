@@ -14,7 +14,7 @@
         <div>
 
 
-
+        <a href="{{url('/homeadmin')}}"><input type="button" value="Volver" class = "btn-reserva"></a>
             <form action="{{ route('homeadmin.update', $aula->id) }}" method="POST">
     @csrf
     @method('PUT')
