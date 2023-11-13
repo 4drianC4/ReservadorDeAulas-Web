@@ -15,10 +15,10 @@ class CreateReservaPeriodosTable extends Migration
     {
         Schema::create('reserva_periodos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('reserva_id');
+            $table->unsignedBigInteger('reservador_id');
             $table->unsignedBigInteger('periodo_id');
 
-            $table->foreign('reserva_id')->references('id')->on('reservas')->onDelete('cascade');
+            $table->foreign('reservador_id')->references('id')->on('reservadors')->onDelete('cascade');
             $table->foreign('periodo_id')->references('id')->on('periodos')->onDelete('cascade');
             $table->timestamps();
         });
