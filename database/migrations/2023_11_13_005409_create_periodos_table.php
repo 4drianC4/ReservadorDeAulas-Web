@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CatalogoHorario extends Migration
+class CreatePeriodosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CatalogoHorario extends Migration
      */
     public function up()
     {
-        Schema::create('catalogo_horarios', function (Blueprint $table) {
-            /*
+        Schema::create('periodos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 50);
-            $table->time('hora_inicio');
-            $table->time('hora_fin');
-            $table->string('descripcion', 100)->nullable();
+            $table->string('horario');
             $table->timestamps();
-            */
         });
     }
 
@@ -32,6 +27,6 @@ class CatalogoHorario extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('periodos');
     }
 }
