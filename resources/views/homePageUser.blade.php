@@ -43,13 +43,13 @@
             </thead>
             <tbody>
                 @foreach($consulta as $c)
+                @if($c->activo == 1)
                 <tr>
                     <td>{{$c->nombreAmbiente}}</td>
                     <td>{{$c->capacidadAmbiente}}</td>
-                    <td class="{{$c->activo == 1 ? 'available' : 'reserved'}}">
-                        {{$c->activo == 1 ? 'Disponible' : 'Reservada'}}    
-                    </td>
+                    <td class="{{$c->activo == 1 ? 'available' : 'reserved'}}">disponible</td>    
                 </tr>
+                @endif                
                 @endforeach
             </tbody>
         </table> 

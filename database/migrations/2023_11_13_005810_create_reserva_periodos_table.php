@@ -15,6 +15,8 @@ class CreateReservaPeriodosTable extends Migration
     {
         Schema::create('reserva_periodos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('reserva_id')->constrained('reservadors');
+            $table->foreignId('periodo_id')->constrained('periodos');
             $table->timestamps();
         });
     }
