@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReservaPeriodosTable extends Migration
+class CreatePeriodoReservadorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateReservaPeriodosTable extends Migration
      */
     public function up()
     {
-        Schema::create('reserva_periodos', function (Blueprint $table) {
+        Schema::create('periodo_reservador', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('reservador_id');
-            $table->unsignedBigInteger('periodo_id');
 
-            $table->foreign('reservador_id')->references('id')->on('reservadors')->onDelete('cascade');
+            $table->unsignedBigInteger('periodo_id');
+            $table->unsignedBigInteger('reservador_id');
+
             $table->foreign('periodo_id')->references('id')->on('periodos')->onDelete('cascade');
+            $table->foreign('reservador_id')->references('id')->on('reservadors')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateReservaPeriodosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reserva_periodos');
+        Schema::dropIfExists('periodo_reservador');
     }
 }
