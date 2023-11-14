@@ -16,21 +16,49 @@
     <form action="{{route('reservaAula.store')}}" method="POST">
         {{csrf_field()}}
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre_aula" name="nombre_aula" required>
+        <input type="text" id="nombre_ambiente" name="nombre_ambiente" required>
 
-        <label for="fecha">Fecha de Inicio:</label>
+        <label for="fecha">Fecha:</label>
         <input type="date" id="fecha" name="fecha" required>
 
-        <label for="hora_inicio">Hora de Inicio:</label>
-        <input type="time" id="hora_inicio" name="hora_inicio" min="09:00" max="18:00" required>
 
-        <label for="hora_fin">Hora de Fin:</label>
-        <input type="time" id="hora_fin" name="hora_fin" min="09:00" max="18:00" required>
+        <label for="horarioInicio">Horario de Inicio:</label>
+        <select id="horarioInicio" name="horarioInicio" required >
+            <option value="1">06:45 - 08:15</option>
+            <option value="2">08:15 - 09:45</option>
+            <option value="3">09:45 - 11:15</option>
+            <option value="4">11:15 - 12:45</option>
+            <option value="5">12:45 - 14:15</option>
+            <option value="6">14:15 - 15:45</option>
+            <option value="7">15:45 - 17:15</option>
+            <option value="8">17:15 - 18:45</option>
+            <option value="9">18:45 - 20:15</option>
+            <option value="10">20:15 - 21:45</option>
+        </select>
 
-        
+        <label for="horarioFin">HorarioFin:</label>
+        <select id="horarioFin" name="horarioFin" required >
+            <option value="1">06:45 - 08:15</option>
+            <option value="2">08:15 - 09:45</option>
+            <option value="3">09:45 - 11:15</option>
+            <option value="4">11:15 - 12:45</option>
+            <option value="5">12:45 - 14:15</option>
+            <option value="6">14:15 - 15:45</option>
+            <option value="7">15:45 - 17:15</option>
+            <option value="8">17:15 - 18:45</option>
+            <option value="9">18:45 - 20:15</option>
+            <option value="10">20:15 - 21:45</option>
+        </select>
+
         <label for="motivo">Motivo de la Reserva:</label>
         <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+        
+        
         <input type="submit" class = "btn-mostrar" class = "otro" value="Reservar Aula">
+
+
+        
+
 
         <a  href="{{url('/horariodeaula')}}"><input type="button" value="Mostrar Información Aula" class = "btn-mostrar"></a>
         <a  href="{{url('/')}}"><input type="button" value="volver" class = "btn-volver"></a>
