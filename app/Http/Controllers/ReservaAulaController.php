@@ -92,4 +92,9 @@ class ReservaAulaController extends Controller
         //return redirect()->route('reserva-aulas.index');
     }
 
+    public function all()
+    {
+        $reservas = Reserva::all();
+        return view('reservaUser', compact('reservas'));
+    }
 }
