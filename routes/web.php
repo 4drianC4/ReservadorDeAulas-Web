@@ -53,7 +53,7 @@ Route::resource('reservaAula', ReservaAulaController::class);
 
 Route::resource('homeadmin', AulaController::class);
 
-Route::resource('peticionesUs', peticionesController::class);
+Route::resource('peticiones', peticionesController::class);
 
 Route::resource('homeadmin', AulaController::class);
 

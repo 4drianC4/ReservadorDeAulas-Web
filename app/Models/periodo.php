@@ -10,7 +10,8 @@ class periodo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'horario',
+        'horarioInicio',
+        'horarioFin',
     ];
 
     public function reservas()
