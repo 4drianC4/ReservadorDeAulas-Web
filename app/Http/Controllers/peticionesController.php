@@ -14,15 +14,14 @@ use App\Models\ReservaPeriodo;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PeticionesController extends Controller
 {
     //obtener todas las reservas y mostrar nombre de aula y periodos
     public function index()
     {
-        $reserva = Reservador::all();
-        $reserva = Reservador::with('ambiente')->get();
-        $reserva = Reservador::with('periodos')->get();
+        $reserva = Reservador::with('ambiente','periodo')->get();
         return view('peticiones')->with('reserva', $reserva);
     }
     

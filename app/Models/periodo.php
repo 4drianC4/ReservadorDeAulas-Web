@@ -14,8 +14,8 @@ class periodo extends Model
         'horarioFin',
     ];
 
-    public function reservas()
+    public function reservador()
     {
-        return $this->belongsToMany('App\Models\reservador');
+        return $this->belongsToMany(reservador::class, 'periodo_reservador', 'periodo_id', 'reservador_id');
     }
 }

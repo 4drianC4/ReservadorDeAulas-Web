@@ -21,9 +21,9 @@
             <p>ambiente:</p>
             <p>{{$r->ambiente->nombreAmbiente}}</p>
             <p>horario Inicio:</p>
-            <p>{{$r->horarioInicio}}</p>
+            <p>{{optional($r->periodo->first())->horarioInicio}}</p>
             <p>horario Fin:</p>
-            <p>{{$r->horarioFin}}</p>
+            <p>{{optional($r->periodo->last())->horarioFin}}</p>
             <p>responsable:</p>
             <div class="botonera">
                 <button class="accept">aceptar</button>
