@@ -75,6 +75,9 @@ Route::get('filtro/filterCapacidadUser', [FiltrosController::class, 'filterCapac
 
 Route::get('filtro/filterNameUser', [FiltrosController::class, 'filterNameUser'])->name('filtro.filterNameUser');
 
+Route::get('filtro/filterByEverything', [FiltrosController::class, 'filterByEverything'])->name('filtro.filterByEverything');
+
+Route::get('filtro/filterByEverythingAdmin', [FiltrosController::class, 'filterByEverythingAdmin'])->name('filtro.filterByEverythingAdmin');
 
 
 

@@ -20,4 +20,10 @@ class ambiente extends Model
     {
         return $this->belongsToMany('App\Models\facilidad');
     }
+
+    public function reservadores()
+    {
+        return $this->hasMany(Reservador::class);
+    }
+    
 }
