@@ -36,7 +36,7 @@
             <option value="10">20:15 - 21:45</option>
         </select>
 
-        <label for="horarioFin">HorarioFin:</label>
+        <label for="horarioFin">Horario de Fin:</label>
         <select id="horarioFin" name="horarioFin" required >
             <option value="1">06:45 - 08:15</option>
             <option value="2">08:15 - 09:45</option>
