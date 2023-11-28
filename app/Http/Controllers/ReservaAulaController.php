@@ -55,7 +55,7 @@ class ReservaAulaController extends Controller
         $reserva->save();
 
         for ($i = $periodoInicio; $i <= $periodoFin; $i++) {
-            $reserva->periodos()->attach($i);
+            $reserva->periodo()->attach($i);
         }
         //return view('homePageUser');
         return view('reservaUser');
