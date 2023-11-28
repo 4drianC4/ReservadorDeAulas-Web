@@ -22,6 +22,7 @@ class PeticionesController extends Controller
     public function index()
     {
         $reserva = Reservador::with('ambiente','periodo')->get();
+        //$reserva = Reservador::where('aceptado', 0)->with('ambiente', 'periodo')->get();
         return view('peticiones')->with('reserva', $reserva);
     }
     
@@ -31,14 +32,14 @@ class PeticionesController extends Controller
         $reserva = Reservador::find($id);
         $reserva->aceptado = true;
         $reserva->save();
-        return redirect()->route('peticionesUs.index');
+        return redirect()->route('peticiones.index');
     }
 
     //rechazar una reserva
     public function rechazar($id)
     {
-        $reserva = ReservaAulaController::find($id);
+        $reserva = Reservador::find($id);
         $reserva->delete();
-        return redirect()->route('peticionesUs.index');
+        return redirect()->route('peticiones.index');
     }
 }

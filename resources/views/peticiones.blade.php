@@ -26,13 +26,16 @@
             <p>{{optional($r->periodo->last())->horarioFin}}</p>
             <p>responsable:</p>
             <div class="botonera">
-            <form method="PUT" action="{{ route('peticiones.aceptar', $r->id) }}">
+                <form method="POST" action="{{ route('peticiones.aceptar', $r->id) }}">
                     @csrf
-                                @method('PUT')
-                                <button type="submit" class="accept">aceptar</button>
-                                
-            </form>
-                <button class="delete">declinar</button>
+                    @method('PUT')
+                    <button type="submit" class="accept">aceptar</button>
+                </form >
+                <form method="POST" action="{{ route('peticiones.rechazar', $r->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="delete">declinar</button>
+                </form>
             </div>
         </div>
         @endforeach
