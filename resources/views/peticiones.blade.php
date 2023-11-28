@@ -26,7 +26,12 @@
             <p>{{optional($r->periodo->last())->horarioFin}}</p>
             <p>responsable:</p>
             <div class="botonera">
-                <button class="accept">aceptar</button>
+            <form method="PUT" action="{{ route('peticiones.aceptar', $r->id) }}">
+                    @csrf
+                                @method('PUT')
+                                <button type="submit" class="accept">aceptar</button>
+                                
+            </form>
                 <button class="delete">declinar</button>
             </div>
         </div>
