@@ -84,3 +84,6 @@ Route::get('filtro/filterByEverythingAdmin', [FiltrosController::class, 'filterB
 //Route::get('homeadmin/cargarAulas', [AulaController::class, 'cargarAulas'])->name('cargar-aulas');
 
 Route::post('homeadmin/procesarCSV', [AulaController::class, 'procesarCSV'])->name('homeadmin.procesarCSV');
+
+Route::put('peticionesAceptar/{id}', [peticionesController::class, 'aceptar'])->name('peticiones.aceptar');
+Route::delete('peticionesRechazar/{id}', [peticionesController::class,'rechazar'])->name('peticiones.rechazar');

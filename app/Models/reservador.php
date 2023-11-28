@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class reservador extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = [
         'fechaReserva',
         'descripcionReserva',
@@ -20,8 +20,8 @@ class reservador extends Model
         return $this->belongsTo('App\Models\ambiente');
     }
 
-    public function periodos()
+    public function periodo()
     {
-        return $this->belongsToMany('App\Models\periodo');
+        return $this->belongsToMany(periodo::class, 'periodo_reservador', 'reservador_id', 'periodo_id');
     }
 }
