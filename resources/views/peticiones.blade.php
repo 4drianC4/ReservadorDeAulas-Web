@@ -16,17 +16,16 @@
 
     <div>
         @foreach($reserva as $r)
+               
         <div class="card">
-            <h2>Reserva</h2>
-            <p>ambiente:</p>
-            <p>{{$r->ambiente->nombreAmbiente}}</p>
-            <p>horario Inicio:</p>
-            <p>{{optional($r->periodo->first())->horarioInicio}}</p>
-            <p>horario Fin:</p>
-            <p>{{optional($r->periodo->last())->horarioFin}}</p>
-            <p>responsable:</p>
+            <h2 id="h2-reserva">Reserva</h2>            
+            <label>ambiente: {{$r->ambiente->nombreAmbiente}}</label>
+            <label>fecha: {{$r->fechaReserva}}</label>
+            <label>horario Inicio: {{optional($r->periodo->first())->horarioInicio}}</label>        
+            <label>horario Fin: {{optional($r->periodo->last())->horarioFin}}</label>
+            <label>responsable:</label>
             <div class="botonera">
-                <form method="POST" action="{{ route('peticiones.aceptar', $r->id) }}">
+                <form class="formbutton" method="POST" action="{{ route('peticiones.aceptar', $r->id) }}">
                     @csrf
                     @method('PUT')
                     <button type="submit" class="accept">aceptar</button>
@@ -36,6 +35,8 @@
                     @method('DELETE')
                     <button type="submit" class="delete">declinar</button>
                 </form>
+            <form class="formbutton">
+            </form>
             </div>
         </div>
         @endforeach
