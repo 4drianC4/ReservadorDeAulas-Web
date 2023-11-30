@@ -99,18 +99,18 @@ input[type="button"]{
 }
 
 .card{
-    min-width: 35vh;
-    max-width: 90vh;
-    height: 45vh;
-    margin: 5px auto;
+    min-width: 35vw;
+    max-width: 90vw;
+    min-height: 45vh;
+    margin: 10px 10px;
     padding: 20px;
-    background-color: #8d9091;
+    background-color:rgba(98, 98, 98, 0.8);
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
-    flex-direction: column; /* Cambiamos la dirección de flex a columna */
-    justify-content: center; /* Centramos verticalmente los elementos */
-    align-items: stretch; /* Estiramos los elementos para que ocupen todo el ancho */   
+    flex-direction: column; 
+    justify-content: center;
+    align-items: stretch;
 }
 
 #h2-reserva{
@@ -120,16 +120,15 @@ input[type="button"]{
 
 .botonera{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     margin-top: 25px;
-
 }
 
 .formbutton{
     height: 30px;
     width: 30%;
-    margin: 0 40px;
+    margin: 0 10px;
 }
 .accept{
     height: 100%;

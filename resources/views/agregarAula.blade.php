@@ -12,9 +12,9 @@
             <img src="{{ asset('multimedia/logoumss.png') }}" class="iconcab">
         </div>
         <div>
-            <h1>Agregar Aula</h1>
+            <h1>Agregar Ambiente</h1>
             <a href="{{url('/homeadmin')}}"><input type="button" value="Volver" class = "btn-reserva"></a>
-            <form action="{{route('homeadmin.store')}}" method = "POST">
+            <form action="{{route('homeadmin.store')}}" class="form" method = "POST">
                 {{csrf_field()}}
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre del aula" required>

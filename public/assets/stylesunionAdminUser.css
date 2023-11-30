@@ -323,13 +323,18 @@ select, input[type="submit"] {
     font-size: 17px;
     border: 1px solid grey;
     float: left;
+    max-height: 100%;
     width: 80%;
     background: #f1f1f1;
+    border-radius: 5px 0 0 5px;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
   
   form.example button {
     float: left;
     width: 20%;
+    max-height: 100%;
     padding: 10px;
     background: #2196F3;
     color: white;
@@ -337,33 +342,36 @@ select, input[type="submit"] {
     border: 1px solid grey;
     border-left: none;
     cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
   
   form.example button:hover {
     background: #0b7dda;
   }
   
-  form.example::after {
-    content: "";
-    clear: both;
-    display: table;
+  form.example{
+    background-color: transparent;
+    width: 900vw;
+    max-height: 8vw;
+    background-color: #f4f4f4;
+    border-radius: 5px;
   }
-  
   /*Aqui termina la parte de admin distinta*/
 
 .headcontainer{
   display: flex;
   flex-direction: row;
-  margin-bottom: 10%;
-  margin-left: -20%;
-  padding-left: 100px;
+  margin-top: 10vw;
+  max-height: 8vw;
 }
 
 .menu-container {
-  position: relative;
-  display: inline-block;
-  width: 25%;
   text-align: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   font-size: 25px;
 }
@@ -399,19 +407,18 @@ select, input[type="submit"] {
   border: 1px solid black;
   padding: 10px 30px;
   border-bottom: 2px solid #ffffff;
-  background-color: #2196f3;
+  background-color: #484a4b;
   max-width: 200px;
+  border-radius: 5px;
   text-shadow: 1px 1px black;
 }
 
 #boton-h {
-  box-sizing: border-box;
-  display: inline-block;
   border: 1px solid black;
   border-radius: 5px;
-  line-height: 30px;
+  line-height: 2vw;
+  padding: 10px 30px;
   font-weight: bold;
-  text-align: center;
   user-select: none;
 }
 

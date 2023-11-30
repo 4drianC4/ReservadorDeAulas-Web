@@ -13,7 +13,7 @@
             <img src= "{{ asset('multimedia/logoumss.png') }}" class="iconcab">
         </div>
         <h1>Reserva de Aulas</h1>
-    <form action="{{route('reservaAula.store')}}" method="POST">
+    <form class="form" action="{{route('reservaAula.store')}}" method="POST">
         {{csrf_field()}}
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre_ambiente" name="nombre_ambiente" required>

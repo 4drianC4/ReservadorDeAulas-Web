@@ -11,11 +11,6 @@
 </head>
 <body>
 
-    <div class="cabecera">
-        <img src="{{ asset('multimedia/logoumss.png') }}" class="iconcab">
-        <!-- Simulate a smartphone / tablet -->
-    </div>
-
     <div class="headcontainer">
      <!-- menu desplegable -->
         <nav class="menu-container">

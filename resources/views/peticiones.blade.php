@@ -30,7 +30,7 @@
                     @method('PUT')
                     <button type="submit" class="accept">aceptar</button>
                 </form >
-                <form method="POST" action="{{ route('peticiones.rechazar', $r->id) }}">
+                <form class="formbutton" method="POST" action="{{ route('peticiones.rechazar', $r->id) }}">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="delete">declinar</button>
