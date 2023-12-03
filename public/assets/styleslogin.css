@@ -37,11 +37,11 @@ body{
 }
 
 .iconcab{
-    height: auto;
-    max-width: 5vw;
+    max-height: 50px;
+    max-width: 50px;
     float: left;
-    margin: 10px;
 }
+
 button{
     padding: 10px 20px;
     background-color: #5465b3;
@@ -57,11 +57,20 @@ button:hover{
 }
 
 .footer{
-    background-color: #505b65;
+    background-color: rgba(89, 89, 89, 0.8);
     text-align: left;
     color: #ffffff;
     font-family: sans-serif;
-    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    max-height: 17vw;
+    font-size: 12px;
+    width: 100%;
+    display: flex;
+}
+
+.contactos{    
+    margin-left: 10px;
 }
 
 .itemcontact{
@@ -69,13 +78,20 @@ button:hover{
     flex-direction: row; 
     justify-content: left;
     align-items: center;
-    z-index: 2;
+    margin-left: 10px;
 }
 
 .icontact{
-    height: auto;
-    max-width: 5%;
+    height: 25px;
+    max-width: 25px;
     background-color: transparent;
+}
+
+.iconrepo{
+    height: 25px;
+    max-width: 25px;
+    float: left;
+    margin-left: 10px;
 }
 
 a{
@@ -94,7 +110,8 @@ a:hover{
     padding: 20px;
     margin: 30px;
     text-align: center;
-    width: 70vw;
+    max-width: 70vw;
+    max-height: 70vw;
     display: inline-block;
 }
 
@@ -103,6 +120,6 @@ a:hover{
     margin: 10px;
     border-radius: 5px;
     border: 1px solid #cccccc;
-    width: 60vw;
-    height: 5vw;
+    max-width: 60vw;
+    max-height: 5vw;
 }

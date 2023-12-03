@@ -12,7 +12,6 @@
 <body>
 
     <div class="headcontainer">
-     <!-- menu desplegable -->
         <nav class="menu-container">
             <input type="button" id="menu">
             <label for="menu" id="boton-h">☰</label>
@@ -26,7 +25,7 @@
 
         <form class="example" action = "{{route('filtro.filterNameAdmin')}}" method="GET">
             <input type="text" placeholder="Search.." name="nombre">
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <button  class="buscador" type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div> 
 
@@ -51,7 +50,7 @@
                         {{$aula->activo == 1 ? 'Disponible' : 'no disponible'}}    
                     </td>
                     <td>
-                        <div class="container">
+                        <div class="buttoncont">
                             <form method="PUT" action="{{ route('homeadmin.edit', $aula->id) }}">
                                 @csrf
                                 @method('PUT')
@@ -117,14 +116,6 @@
             <label for="capacidad">Capacidad:</label>
             <input type="number" name="capacidad" id="capacidad" placeholder="Capacidad del aula">
             <input type="submit" value="Filtrar">
-    </form>
-    </div>
-
-    <div class="form">
-    <form action = "{{route('filtro.filterCapacidadAdmin')}}" method="GET">
-        <label for="capacidad">Capacidad:</label>
-        <input type="number" name="capacidad" id="capacidad" placeholder="Capacidad del aula" required>
-        <input type="submit" value="FiltrarCapacidad">
     </form>
     </div>
 

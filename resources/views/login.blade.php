@@ -24,19 +24,22 @@
             </div>
             
             <div class="footer">
-            <p>contactos:</p>
-            <div class="itemcontact">        
-                <img src="{{ asset('multimedia/gmail-icon.png') }}" alt="contacto gmail" class="icontact">
-                <a href="camararequeadrianrafael@gmail.com" target="_blank">Adrian Camara</a>
+                <p class="contactos">contactos:</p>
+                <div class="itemcontact">        
+                    <img src="{{ asset('multimedia/gmail-icon.png') }}" alt="contacto gmail" class="icontact">
+                    <a href="camararequeadrianrafael@gmail.com" target="_blank">Adrian Camara</a>
+                </div>
+                
+                <div class="itemcontact">
+                    <img src="{{ asset('multimedia/gmail-icon.png') }}" alt="contacto gmail" class="icontact">
+                    <a href="#gmail #" target="_blank">Oliver Pozo</a>
+                </div>
+                <div class="itemcontact">
+                    <p>repositorio:</p>                                                                                                
+                    <a href="https://gitlab.com/ihatethewronganswer-programacionweb/reservadordeaula" target="_blank"><img src= "{{ asset('multimedia/gitlab-icon.png') }}" class="iconrepo"></a>
+                </div>
             </div>
-            
-            <div class="itemcontact">
-                <img src="{{ asset('multimedia/gmail-icon.png') }}" alt="contacto gmail" class="icontact">
-                <a href="#gmail #" target="_blank">Oliver Pozo</a>
-            </div>
-            <p>repositorio:</p>                                                                                                
-            <a href="https://gitlab.com/ihatethewronganswer-programacionweb/reservadordeaula" target="_blank"><img src= "{{ asset('multimedia/gitlab-icon.png') }}" class="icontact"></a>
-    
+
         </div>
     </body>    
 </html>

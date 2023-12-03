@@ -10,10 +10,6 @@
     
 </head>
 <body>
-    <div class="cabecera">
-        <img src="{{ asset('multimedia/logoumss.png') }}" class="iconcab">
-    </div>
-
     <div class="headcontainer">
         <nav class="menu-container">
                 <input type="button" id="menu">
@@ -27,7 +23,7 @@
 
         <form class="example" action = "{{route('filtro.filterNameUser')}}" method="GET">
             <input type="text" placeholder="Search.." name="nombre">
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <button  class="buscador" type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
 
@@ -103,15 +99,5 @@
             <input type="submit" value="Filtrar">
         </form>
     </div>
-
-    <div class="form">
-        <form action = "{{route('filtro.filterCapacidadUser')}}" method="GET">
-        <label for="capacidad">Capacidad:</label>
-        <input type="number" name="capacidad" id="capacidad" placeholder="Capacidad del aula" required>
-        <input type="submit" value="FiltrarCapacidad">
-    </form>
-    </div>
-
-    
 </body>
 </html>
