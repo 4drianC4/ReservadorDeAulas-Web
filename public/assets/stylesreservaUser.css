@@ -72,6 +72,7 @@ input[type="submit"],
     font-weight: bold;
     transition: background-color 0.3s ease-in-out;
     align-self: flex-start;
+    margin-bottom: 10px;
 }
 
 /* Cambia el color del botón al pasar el mouse sobre él */

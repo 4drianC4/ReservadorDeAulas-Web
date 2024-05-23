@@ -7,58 +7,80 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# ReservadorDeAulas
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este proyecto es un sistema diseñado para facilitar a los docentes la gestión de reservas de aulas para sus clases. La plataforma proporciona una solución eficiente y organizada para programar y asegurar el uso adecuado de los espacios de enseñanza, permitiendo a los docentes concentrarse en lo más importante: la enseñanza.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Características Principales
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Reservas Intuitivas:** Interfaz sencilla y fácil de usar que permite a los docentes realizar reservas de aulas de manera rápida y eficiente.
 
-## Learning Laravel
+- **Administración de Aulas:** Funcionalidades para la gestión de información de las aulas, como capacidad, ubicación y disponibilidad.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Facilidades para el administrador:** El administrador tendrá mas facilidades a la hora de reservar aulas
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalación
 
-## Laravel Sponsors
+Siga estos pasos para instalar y configurar el proyecto localmente.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Requisitos Previos
 
-### Premium Partners
+Asegúrese de tener instalados los siguientes requisitos previos:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- PHP >= 7.4
+- Composer
+- MySQL
 
-## Contributing
+### Pasos de Instalación
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Clonar el repositorio:
 
-## Code of Conduct
+    ```bash
+    git clone https://gitlab.com/ihatethewronganswer-programacionweb/reservaaulas.git
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2. Entrar al directorio del proyecto:
 
-## Security Vulnerabilities
+    ```bash
+    cd reservaaulas
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. Instalar las dependencias de Composer:
 
-## License
+    ```bash
+    composer install
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+4. Copiar el archivo de configuración:
+
+    ```bash
+    cp .env.example .env
+    ```
+
+5. Configurar las variables de entorno en el archivo `.env` con la información de tu base de datos y otros ajustes necesarios.
+
+    1. asegúrese de cambiar las credenciales por las suyas dentro del archivo .env
+    2. debe crear la base de datos, para crear la base de datos siga los pasos que existen dentro del archivo reserva_aulasDATA.sql
+
+6. Generar la clave de aplicación:
+
+    ```bash
+    php artisan key:generate
+    ```
+
+7. Ejecutar las migraciones y semillas de la base de datos:
+
+    ```bash
+    php artisan migrate --seed
+    ```
+
+## Iniciar el Proyecto
+
+Una vez que haya completado la instalación, puede iniciar el servidor de desarrollo:
+
+    ```bash
+        php artisan serve
+    ```
+
+## Disponibilidad
+El proyecto lo tendrá disponible dentro de su localhost, comúnmente este se encuentra en el puerto 8000# ReservadorDeAulas-Web
